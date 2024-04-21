@@ -25,8 +25,7 @@ public class GrapheMAdj extends Graphe {
         if (!indices.containsKey(noeud)) {
             indices.put(noeud, indices.size());
 
-            int newSize = indices.size();
-            int[][] newMatrice = new int[newSize][newSize];
+            int newSize = indices.size();qint[][] newMatrice = new int[newSize][newSize];
             for (int i = 0; i < matrice.length; i++) {
                 System.arraycopy(matrice[i], 0, newMatrice[i], 0, matrice.length);
             }
