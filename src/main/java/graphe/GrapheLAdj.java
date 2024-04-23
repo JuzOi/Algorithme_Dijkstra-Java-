@@ -43,8 +43,9 @@ public class GrapheLAdj extends Graphe {
         if (indices.containsKey(noeud)) {
             int index = indices.get(noeud);
             indices.remove(noeud);
-
             listeAdj.remove(index);
+            for (Map<String, Integer> adjacence : listeAdj)
+                adjacence.remove(noeud);
         }
     }
 

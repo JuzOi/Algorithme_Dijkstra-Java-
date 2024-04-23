@@ -108,7 +108,7 @@ public class GrapheLArcs extends Graphe {
     @Override
     public boolean contientArc(String src, String dest) {
         for (Arc arc : arcs)
-            if (arc.getSource().equals(src) || arc.getDestination().equals(dest))
+            if (arc.getSource().equals(src) && arc.getDestination().equals(dest))
                 return true;
         return false;
     }

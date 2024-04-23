@@ -36,6 +36,8 @@ public class GrapheHHAdj extends Graphe{
     @Override
     public void oterSommet(String noeud) {
         hashAdj.remove(noeud);
+        for (Map<String, Integer> entry : hashAdj.values())
+            entry.remove(noeud);
     }
 
     @Override
