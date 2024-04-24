@@ -144,8 +144,7 @@ class IGrapheTest {
                 Map<String, Integer> dist = new HashMap<>();
                 Map<String, String> prev = new HashMap<>();
                 long debut = System.nanoTime();
-                Dijkstra dijkstra = new Dijkstra();
-                dijkstra.dijkstra(g, arc.getSource(), dist, prev);
+                Dijkstra.dijkstra(g, arc.getSource(), dist, prev);
                 long fin = System.nanoTime();
                 System.out.println("dijkstra a dure " + (fin - debut)/1000000 + " millisecondes");
 
