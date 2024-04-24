@@ -22,11 +22,9 @@ public class GrapheHHAdj extends Graphe{
         if (!hashAdj.containsKey(destination)) {
             ajouterSommet(destination);
         }
-        for (String succ : hashAdj.get(source).keySet()) {
-            if (succ.equals(destination)) {
-                throw new IllegalArgumentException("Un arc existe déjà entre les sommets : " + source + " et " + destination);
-            }
-        }
+        if (hashAdj.get(source).containsKey(destination))
+            throw new IllegalArgumentException("Un arc existe déjà entre les sommets : " + source + " et " + destination);
+
         if (valeur < 0)
             throw new IllegalArgumentException("Les valuations ne doivent pas etre negatives " + valeur);
 
