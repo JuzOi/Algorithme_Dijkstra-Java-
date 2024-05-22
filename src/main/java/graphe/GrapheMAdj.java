@@ -119,7 +119,6 @@ public class GrapheMAdj extends Graphe {
         int indexSource = indices.get(src);
         int indexDestination = indices.get(dest);
         return matrice.get(indexSource).get(indexDestination) > 0;
-
     }
 
 }
