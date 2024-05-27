@@ -59,9 +59,19 @@ public class GrapheMAdj extends Graphe {
             indices.remove(noeud);
 
             matrice.remove(index);
-            for (List<Integer> row : matrice) {
+            for (List<Integer> row : matrice)
                 row.remove(index);
+
+            Map<String, Integer> newIndices = new HashMap<>();
+            for (Map.Entry<String, Integer> entry : indices.entrySet()) {
+                int oldIndex = entry.getValue();
+                if (oldIndex > index) {
+                    newIndices.put(entry.getKey(), oldIndex - 1);
+                } else {
+                    newIndices.put(entry.getKey(), oldIndex);
+                }
             }
+            indices = newIndices;
         }
     }
 
@@ -71,7 +81,7 @@ public class GrapheMAdj extends Graphe {
             int indexSource = indices.get(source);
             int indexDestination = indices.get(destination);
 
-            if (matrice.get(indexSource).get(indexDestination) > 0) {
+            if (matrice.get(indexSource).get(indexDestination) == 0) {
                 throw new IllegalArgumentException("Aucun arc n'existe entre les sommets : " + source + " et " + destination);
             }
 

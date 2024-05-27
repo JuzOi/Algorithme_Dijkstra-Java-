@@ -41,10 +41,7 @@ public class GrapheHHAdj extends Graphe{
     @Override
     public void oterArc(String source, String destination) {
         if (hashAdj.containsKey(source) && hashAdj.containsKey(destination)) {
-            for (String succ : hashAdj.get(source).keySet())
-                if (succ.equals(destination))
-                    hashAdj.get(source).remove(succ);
-
+            hashAdj.get(source).remove(destination);
 
             if (!hashAdj.get(source).containsKey(destination)) {
                 throw new IllegalArgumentException("Aucun arc n'existe entre les sommets : " + source + " et " + destination);

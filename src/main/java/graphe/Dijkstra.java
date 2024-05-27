@@ -11,7 +11,7 @@ public class Dijkstra {
 
     public static void dijkstra(IGraphe g, String source, Map<String, Integer> dist, Map<String, String> prev){
         for (String sommet : g.getSommets())
-            noeudsNonTraites.put(sommet, heap.insert(Integer.MAX_VALUE, sommet ));
+            noeudsNonTraites.put(sommet, heap.insert(Integer.MAX_VALUE, sommet));
 
         dist.put(source, 0);
         noeudsNonTraites.get(source).decreaseKey(0);
@@ -51,7 +51,7 @@ public class Dijkstra {
         dijkstra(g, src, dist, prev);
 
         StringBuilder s = new StringBuilder();
-        if (dist.get(dest)< 0)
+        if (!dist.containsKey(dest))
             return "pas de chemin entre " + src + " et " + dest;
 
         s.append("Dijkstra").append("\n");
